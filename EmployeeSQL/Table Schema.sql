@@ -1,5 +1,5 @@
 CREATE TABLE departments (
-	dept_no VARCHAR (30) PRIMARY KEY,
+	dept_no VARCHAR (30) PRIMARY KEY NOT NULL,
 	dept_name VARCHAR (30)
 	
 );
@@ -28,14 +28,14 @@ SELECT *
 FROM dept_manager;
 
 CREATE TABLE employees (
-	emp_no INT PRIMARY KEY,
+	emp_no INT PRIMARY KEY NOT NULL,
 	emp_title_id VARCHAR (30),
 	FOREIGN KEY (emp_title_id) REFERENCES titles(title_id),
 	birth_date VARCHAR (30),
 	first_name VARCHAR (30),
 	last_name VARCHAR (30),
 	sex VARCHAR (30),
-	hire_date VARCHAR (30)
+	hire_date DATE
 );
 
 SELECT *
@@ -51,7 +51,7 @@ SELECT *
 FROM salaries;
 
 CREATE TABLE titles(
-	title_id VARCHAR (30) PRIMARY KEY,
+	title_id VARCHAR (30) PRIMARY KEY NOT NULL,
 	title VARCHAR (30)
 );
 
